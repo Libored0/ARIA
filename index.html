@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Página Acessível com ARIA</title>
+</head>
+<body>
+
+  <h1>Página Acessível com ARIA</h1>
+
+  <h2>Exemplo de página acessível com ARIA</h2> 
+
+  <!-- Imagem-->
+  <div class="figura">
+    
+    <img src="aria.png" alt="Imagem ARIA">
+
+  </div>
+
+  <!-- Containers com Seções de Texto -->
+  <div class="container">
+    <button onclick="toggleVisibility('section1')">Mostrar/Ocultar Seção 1</button>
+    <div id="section1" class="hidden">
+      <h2>Seção 1</h2>
+      <p>- Enter ou Espaço -</p>
+      <p>Se a implementação permitir que apenas um painel seja expandido e se outro painel for expandido, esse painel será recolhido.</p>
+      <p>- Tab -</p>
+      <p>Move o foco para o próximo elemento focável</p>
+      <p> - Shift + Tab - </p>
+      <p>Move o foco para o elemento focável anterior</p>
+      <p>- Down Arrow -</p>
+      <p>Se o foco estiver em um cabeçalho sanfonado, move o foco para o próximo cabeçalho sanfonado</p>
+      <p>- Up Arrow -</p>
+      <p>Se o foco estiver em um cabeçalho sanfonado, move o foco para o cabeçalho sanfonado anterior</p>
+      <p>- Home -</p>
+      <p>Quando o foco está em um cabeçalho sanfonado, move o foco para o primeiro cabeçalho sanfonado</p>
+      <p>- End -</p>
+      <p>Quando o foco está em um cabeçalho sanfonado, move o foco para o último cabeçalho sanfonado</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <button onclick="toggleVisibility('section2')">Mostrar/Ocultar Seção 2</button>
+    <div id="section2" class="hidden">
+      <h2>Seção 2</h2>
+      <p>- Quando o Espaço for pressionado e a caixa de seleção estiver em foco -</p>
+      <p>Quando marcado, o elemento checkbox tem o estado aria-checked definido como true</p>
+      <p>Quando não marcado, o estado aria-checked está definido como false.</p>
+      <p>Se um conjunto de caixas de seleção for apresentado como um grupo lógico com um rótulo visível, as caixas de seleção serão incluídas em um elemento -</p>
+      <p>- com grupo de funções que possui a propriedade aria-labelledby definida como o ID do elemento que contém o rótulo.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <button onclick="toggleVisibility('section3')">Mostrar/Ocultar Seção 3</button>
+    <div id="section3" class="hidden">
+      <h2>Seção 3</h2>
+      <p>- Espaço -</p>
+      <p>Ativa o botão</p>
+      <p>Enter</p>
+      <p>Ativa o botão</p>
+      <p>Um botão é um widget que permite aos usuários acionar uma ação ou evento.</p>
+      <p>Um alerta é um elemento que exibe uma mensagem breve e importante de forma a atrair a atenção do usuário sem interromper sua tarefa.</p>
+        <p>É importante observar que, no momento, os leitores de tela não informam aos usuários sobre alertas presentes na página antes da conclusão do carregamento da página.</p>
+    </div>
+  </div>
+
+
+  <!-- Caixa de Seleção com 5 Itens -->
+  <label for="selecao">Selecione uma opção:</label>
+  <select id="selecao">
+    <option value="item1">Item 1</option>
+    <option value="item2">Item 2</option>
+    <option value="item3">Item 3</option>
+    <option value="item4">Item 4</option>
+    <option value="item5">Item 5</option>
+  </select><p>
+
+  <!-- Campo para Digitar Mensagem e Alerta para Clicar em Botão de Enviar -->
+  <label for="mensagem">Digite sua mensagem:</label><p>
+  <textarea id="mensagem" rows="4" cols="50"></textarea><p>
+  <button onclick="showAlert()">Enviar</button>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
